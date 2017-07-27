@@ -1,0 +1,27 @@
+{
+  "name": "tko-aly-reinbursement-platform",
+  "description": "Describes TKO-äly ry's reinbursement platform environment in Heroku. Needed for Heroku review apps.",
+  "scripts": {},
+  "env": {
+    "WORKER_EMAIL": { "required": false },
+    "MAILGUN_API_KEY": { "required": false },
+    "MAILGUN_DOMAIN": { "required": false },
+    "MAILGUN_PUBLIC_KEY": { "required": false },
+    "MAILGUN_SMTP_LOGIN": { "required": false },
+    "MAILGUN_SMTP_PASSWORD": { "required": false },
+    "MAILGUN_SMTP_PORT": { "required": false },
+    "MAILGUN_SMTP_SERVER": { "required": false },
+    "NPM_TOKEN": { "required": false },
+    "NPM_CONFIG_PRODUCTION": { "value": "false" }
+  },
+  "formation": {},
+  "addons": [
+    "mailgun",
+    "papertrail"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

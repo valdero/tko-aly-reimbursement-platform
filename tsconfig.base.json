@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "noUnusedLocals": true,
+        "importHelpers": true,
+        "baseUrl": ".",
+        "paths": {
+            "client/*": [ "src/client/*" ],
+            "server/*": [ "src/server/*" ],
+            "common/*": [ "src/common/*" ]
+        }
+    }
+}
