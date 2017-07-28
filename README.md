@@ -15,6 +15,10 @@ Backend stack:
 * Async with Promises
 * React rendering
 
+## Documentation
+
+* [Course-related planning document](doc/project-plan.pdf)
+
 ## Get started
 
 To run locally
