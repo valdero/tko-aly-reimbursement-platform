@@ -13,13 +13,18 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./dist/src/server/server.js",
-    "build": "npm run buildServer",
+    "build": "npm run buildClient && npm run buildServer",
+    "buildClient": "node postcss.js && rollup -c",
     "buildServer": "tsc --project ./tsconfig.server.json",
+    "buildTestClient": "tsc --noEmit",
     "buildTestServer": "tsc --noEmit --project ./tsconfig.server.json",
-    "watch": "concurrently --prefix \"[{name}]\" --names \"SERVER\" -c \"bgBlue.bold\" \"npm run watchServer\"",
+    "watch": "concurrently --prefix \"[{name}]\" --names \"CLIENT,SERVER\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run watchClient\" \"npm run watchServer\"",
+    "watchClient": "nodemon --watch src/client --watch src/common --ext ts,tsx,css --exec 'npm run buildClient'",
     "watchServer": "nodemon --watch src --ext ts,tsx --exec 'npm run buildServer && npm start'",
     "lint": "npm run lintServer",
-    "lintServer": "npm run buildTestServer && tslint --project tsconfig.server.json --type-check"
+    "lintServer": "npm run buildTestServer && tslint --project tsconfig.server.json --type-check",
+    "heroku-prebuild": "npm install && npm install --dev",
+    "heroku-postbuild": "NODE_ENV=production npm run build"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.3",
