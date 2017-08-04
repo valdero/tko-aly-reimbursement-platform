@@ -1,4 +1,4 @@
-# TKO äly ry's reinbursement and invoicing platform
+# TKO äly ry's reimbursement and invoicing platform
 
 Frontend stack:
 
@@ -18,6 +18,7 @@ Backend stack:
 ## Documentation
 
 * [Course-related planning document](doc/project-plan.pdf)
+* [Project location](https://tko-aly-reinbursement-platform.herokuapp.com/)
 
 ## Get started
 
